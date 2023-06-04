@@ -11,6 +11,8 @@ class Automobile(val name : String, val tyres : Int , val maxSeating : Int, val 
     fun drive(){}
     fun applyBrakes(){}
 }
+//----------------------------------------------------------------------------
+class Calculator{}
 
 fun main(){
     var car = Automobile("Car", "petrol")
@@ -689,7 +691,7 @@ fun main(args: Array<String>)
 }*/
 //---------------------------------------------------------------------------
 //Calling parent class secondary constructor from child class secondary constructor –
-open class Parent {
+/*open class Parent {
     constructor (emp_id: Int, emp_name: String, emp_salary: Double) {
         var id: Int = emp_id
         var name: String = emp_name
@@ -710,5 +712,52 @@ class Child : Parent {
 }
 fun main(args: Array<String>) {
     Child(18018, "Sagnik")
-}
+}*/
 //----------------------------------------------------------------------------------
+/*
+//------------------------Default Constructor
+class Calculator(){
+
+    fun ADD(a : Int , b: Int) : Int{
+        return a + b
+    }
+
+    fun Multi(a : Int , b: Int) : Int{
+        return a * b
+    }
+}
+fun main(){
+    val ob = Calculator()
+    println(ob.ADD(4,5))
+}*/
+//--------------------------------------Getter & Setter
+class person( name : String, age : Int){
+
+    var name1 : String = name
+        get() {
+            println("Name getter is called")
+            return field.toUpperCase()
+        }
+    var age1 :  Int = age
+    set(value){
+        if ( value >  0){
+            field  =  value
+        }
+        else{
+            println(" Age cant be negative")
+        }
+    }
+    var email: String = ""
+        get() = field
+        set(value) {
+            field = value
+        }
+
+
+}
+fun main(){
+    var p1 = person("hjh", 13)
+    println(p1.age1)
+    p1.age1 = 23
+    println(p1.name1)
+}
